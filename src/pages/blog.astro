@@ -5,6 +5,13 @@ import Card from '../components/Card.astro';
 
 <Layout title="Welcome to Astro.">
 	<main>
+        <div class="nav">
+			<ul>
+				<a href="/">Home</a>
+				<a href="/about">About Me</a>
+				<a href="/blog">Blog</a>
+			</ul>
+		</div>
 		<svg
 			class="astro-a"
 			width="495"
@@ -33,40 +40,13 @@ import Card from '../components/Card.astro';
 				</linearGradient>
 			</defs>
 		</svg>
-		<div class="nav">
-			<ul>
-				<a href="/">Home</a>
-				<a href="/about">About Me</a>
-				<a href="/blog">Blog</a>
-			</ul>
-		</div>
 		
-		<h1>Welcome to <span class="text-gradient">Akshit's Blog</span></h1>
+		
+		<h1><span class="text-gradient">Blog</span></h1>
 		<p class="instructions">
 			Welcome to my digital corner, where code meets creativity and algorithms dance with data! As a passionate software developer and avid Data Structures and Algorithms (DSA) enthusiast, I'm thrilled to embark on this journey of exploration and innovation with you
 		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://www.linkedin.com/in/akshit-gupta-9941b6229/"
-				title="Linkedin"
-				body="Let's connect at the crossroads of software and data!"
-			/>
-			<Card
-				href="https://twitter.com/AKSHITGUPT49907"
-				title="Twitter"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://www.instagram.com/akshitg2042/"
-				title="Instagram"
-				body="Connect with me on instagram"
-			/>
-			<Card
-				href="https://discord.com/channels/423464391791476747/423467167757893642"
-				title="Discord"
-				body="Come say hi to me on Discord and be a part of my community.❤️"
-			/>
-		</ul>
+		
 	</main>
 </Layout>
 
