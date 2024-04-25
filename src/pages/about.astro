@@ -1,6 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+const pageTitle = "About Me";
+const identity = {
+  firstName: "Sarah",
+  country: "Canada",
+  occupation: "Technical Writer",
+  hobbies: ["photography", "birdwatching", "baseball"],
+};
+
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
+const happy = true;
+const finished = false;
+const goal = 3;
 ---
 
 <Layout title="Welcome to Astro.">
@@ -40,7 +51,7 @@ import Card from '../components/Card.astro';
 				<a href="/blog">Blog</a>
 			</ul>
 		</div>
-		<h1>Welcome to <span class="text-gradient">About Me</span></h1>
+		<h1>Welcome to <span class="text-gradient">{pageTitle}</span></h1>
 		<p class="instructions">
             Software Developer and Data Structures and Algorithms (DsA) Enthusiast with a keen interest in leveraging technology to solve complex problems and drive innovation. Currently pursuing a Bvoc. in Software Development at Ramanujan College, Delhi University. Experienced in full-stack development and passionate about continuous learning and growth in the tech industry.		</p>
             Experience:
@@ -84,6 +95,24 @@ import Card from '../components/Card.astro';
             Open Source Contribution
             Team Collaboration
 	</main>
+	<div class="aboutme">
+	<p>Here are a few facts about me:</p>
+<ul>
+  <li>My name is {identity.firstName}.</li>
+  <li>I live in {identity.country} and I work as a {identity.occupation}.</li>
+  {identity.hobbies.length >= 2 &&
+    <li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
+  }
+</ul>
+<p>My skills are:</p>
+<ul>
+  {skills.map((skill) => <li>{skill}</li>)}
+</ul>
+{happy && <p>I am happy to be learning Astro!</p>}
+
+{finished && <p>I finished this tutorial!</p>}
+
+{goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}</div>
 </Layout>
 
 <style>
@@ -95,6 +124,14 @@ import Card from '../components/Card.astro';
 		color:white;
 		text-decoration: none;
 		padding: 8px;
+	}
+	.aboutme{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		color: azure;
+		font-size:1.3rem;
+
 	}
 	main {
 		margin: auto;
